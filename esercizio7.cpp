@@ -9,30 +9,32 @@ int sequenza(int arrayInteri[], int grandezza)
     int contatore = 0;
     for (int i = 0; i < grandezza; i++)
     {
-        if (arrayInteri[i + 1] > arrayInteri[i] && arrayInteri[grandezza-2] > arrayInteri[i] )
+        if (arrayInteri[i + 1] > arrayInteri[i])
         {
-            contatore += 1;
+            continue;
         }
         else
         {
-            continue;;
+            contatore += 1;
         }
     }
+
     return contatore;
 }
 int main()
 {
-    int arrayInteri[] = {6, 7, 8, 9, 10};
+    int arrayInteri[] = {6, 5, 4, 3, 2};
     int grandezza = sizeof(arrayInteri) / sizeof(arrayInteri[0]);
+    if (sequenza(arrayInteri, grandezza) == 0)
     {
-           if (sequenza(arrayInteri, grandezza))
-        {
-
-            cout << "sono presenti " << sequenza(arrayInteri, grandezza) << " sequenze nell'array" << endl;
-        }
-        else
-        {
-            cout << "non sono presenti sequenze" << endl;
-        }
+        cout << "non sono presenti sequenze nell'array";
+    }
+    else if (sequenza(arrayInteri, grandezza) == 1)
+    {
+        cout << "è presente una sola sequenza nell'array" << endl;
+    }
+    else
+    {
+        cout << "sono presenti " << sequenza(arrayInteri, grandezza) << " sequenze nell'array" << endl;
     }
 }
