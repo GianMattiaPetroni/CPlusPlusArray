@@ -23,7 +23,7 @@ int sequenza(int arrayInteri[], int grandezza)
 }
 int main()
 {
-    int arrayInteri[] = {6, 5, 4, 3, 2};
+    int arrayInteri[] = {1, 5, 9, 3, 2};
     int grandezza = sizeof(arrayInteri) / sizeof(arrayInteri[0]);
     if (sequenza(arrayInteri, grandezza) == 0)
     {
